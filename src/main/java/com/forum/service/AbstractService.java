@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.forum.configuration.constant.HttpConstant;
+import com.forum.configuration.constant.HttpMessage;
 import com.forum.domain.AbstractEntity;
 import com.forum.util.validation.RepositoryStatus;
 import com.forum.util.view.Public;
@@ -20,14 +20,14 @@ public class AbstractService {
 public String findMessage (HttpStatus status) {
 	switch (status) {
 	case OK:
-		return HttpConstant.MESSAGE_SUCCESS;
+		return HttpMessage.SUCCESS;
 	case BAD_REQUEST:
 
-		return HttpConstant.MESSAGE_BAD_REQUEST;
+		return HttpMessage.BAD_REQUEST;
 	case NOT_FOUND:
-		return HttpConstant.MESSAGE_NOT_FOUND;
+		return HttpMessage.NOT_FOUND;
 		default:
-			return HttpConstant.MESSAGE_SERVER_ERROR;
+			return HttpMessage.SERVER_ERROR;
 	}
 	}
 

@@ -34,7 +34,7 @@ public class Profile extends AbstractEntity {
     strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = "profile_value_generator", schema = DatabaseConstant.schema,
 	sequenceName = "profile_seq")
-	private String id;
+	private Long id;
 	
 @Column(name = "email")
 private String email;
@@ -53,7 +53,7 @@ public Profile() {
 }
 
 
-public Profile(String id, String email, String phone, String address) {
+public Profile(Long id, String email, String phone, String address) {
 	super();
 	this.id = id;
 	this.email = email;
@@ -63,11 +63,11 @@ public Profile(String id, String email, String phone, String address) {
 
 
 @JsonView(Private.class)
-public String getId() {
+public Long getId() {
 	return id;
 }
 
-public void setId(String id) {
+public void setId(Long id) {
 	this.id = id;
 }
 

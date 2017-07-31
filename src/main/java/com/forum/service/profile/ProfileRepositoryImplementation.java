@@ -38,9 +38,9 @@ public RepositoryStatus<Boolean> delete (Long id) {
 }
 
 @Override
-public RepositoryStatus<Profile> findOne(long id) {
+public RepositoryStatus<Profile> findByUserId(long userId) {
 	try {
-		Profile profile = profileRepository.findOne(id);
+		Profile profile = profileRepository.findByUserId(userId);
 		return profile != null ? new RepositoryStatus<Profile>(HttpStatus.OK, profile) : new RepositoryStatus<Profile>(HttpStatus.INTERNAL_SERVER_ERROR);
 	} catch (Exception exception) {
 			return new RepositoryStatus<Profile> (handleException(exception));

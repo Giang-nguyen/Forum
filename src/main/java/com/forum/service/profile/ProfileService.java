@@ -7,6 +7,6 @@ public interface ProfileService {
 	
 public RepositoryStatus<Profile> save(Profile profile);
 public RepositoryStatus<Boolean> delete (Long id);
-public RepositoryStatus<Profile> findOne(long id);
+public RepositoryStatus<Profile> findByUserId(long userIdd);
 
 }
